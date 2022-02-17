@@ -36,7 +36,7 @@ function App()
       formData.append('file', singleFile);
 
       try {
-        await axios.post(apiUrl + 'singleFile', formData);
+        await axios.post('http://localhost:8080/api/singleFile', formData);
       } 
       catch (error) 
       {
@@ -47,13 +47,12 @@ function App()
   }
 
   //upload file
-  const apiUrl = 'http://localhost:8080/api/';
 
 
 //show all files from db
   const getSingleFiles = async () => {
     try {
-        const {data} = await axios.get(apiUrl + 'getSingleFiles');
+        const {data} = await axios.get('http://localhost:8080/api/read');
         return data;
     } 
     catch (error) 
